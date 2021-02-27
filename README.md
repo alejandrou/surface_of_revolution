@@ -25,11 +25,11 @@ El autor de este proyecto es el estudiante Alejandro Daniel Herrera Cárdenes pa
 
 ## Trabajo realizado
 
-El trabajo se basa en hacer un pong en el programa Processing en el que puedan jugar dos jugadores.
+El trabajo se basa en hacer una superficie de revolucion  en el programa Processing.
 
 ## Decisiones adoptadas
 
-Las mayores decisiones tomadas y las que mas pruebas requirieron fueron que las paletas no se salieran de los limites de la ventana y que la fisica de la pelota se ajustara con las paletas al hacer contacto con ellas.
+Las mayores decisiones tomadas y las que mas pruebas requirieron fue ajustar el algoritmo de superficie para que se generara la rotación y al final generara la figura.
 
 * Este método detecta cuando las paletas llegan al limite de la ventana
   ```
