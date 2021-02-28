@@ -33,8 +33,8 @@ Las mayores decisiones tomadas y las que mas pruebas requirieron fue ajustar el 
 
 * El principal método que rota la figura dibujada con el ratón.
   ```
-    void create_revolution_of_surface(){
-  if(drawing){
+  void create_revolution_of_surface(){
+    if(drawing){
       stroke(255);
       line(400, 0, 400, 800);
       stroke (255, 225, 0);    
