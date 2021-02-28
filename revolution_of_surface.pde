@@ -7,7 +7,7 @@ int x, y, x0, y0, firstPress;
 ArrayList<Coordinates> points;
 
 
-GifMaker ficherogif;
+//GifMaker ficherogif;
 
 void setup (){
   size (800 ,800 ,P3D) ;
@@ -20,9 +20,9 @@ void setup (){
   textAlign(CENTER, CENTER); 
   rectMode(CENTER);
   
-  ficherogif = new GifMaker(this, "figure.gif");
+  /*ficherogif = new GifMaker(this, "figure.gif");
   ficherogif.setRepeat(0);
-  ficherogif.setTransparent(0,0,0);
+  ficherogif.setTransparent(0,0,0);*/
 }
 
 void mainAlgorithm(int x1, int y1, int x11, int y11, int diametro){
@@ -71,8 +71,8 @@ void draw() {
   create_revolution_of_surface();
   figureDrawn();
   
-  ficherogif.setDelay(1);
-  ficherogif.addFrame();
+  /*ficherogif.setDelay(1);
+  ficherogif.addFrame();*/
   
 }
 
@@ -158,11 +158,11 @@ void figureDrawnPage(String text, color c) {
   }
 }
 
-void keyPressed() {
+/*void keyPressed() {
 if (key == 'w' || key == 'W') {
     ficherogif.finish();
   }
-}
+}*/
 
 
 class Coordinates{
