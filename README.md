@@ -31,7 +31,7 @@ El trabajo se basa en hacer una superficie de revolucion  en el programa Process
 
 Las mayores decisiones tomadas y las que mas pruebas requirieron fue ajustar el algoritmo de superficie para que se generara la rotación y al final generara la figura.
 
-* El principal método que rota la figura dibujada con el ratón.
+* Método que crea la figura dibujada con el ratón.
   ```
   void create_revolution_of_surface(){
     if(drawing){
@@ -84,63 +84,53 @@ Las mayores decisiones tomadas y las que mas pruebas requirieron fue ajustar el 
       shape(obj);
     }
   }
-
-* Este método detecta cuando las paletas hacen contacto con la pelota añadiendole un sonido.
+* Método principal del algoritmo de superficie de revolución que va rotando la figura para finalmente crearla.
 
   ```
-    void contactPaddle() {
-    if (x - w/2 < paddleXL + paddleW/2 && y - h/2 < paddleYL + paddleH/2 && y + h/2 > paddleYL - paddleH/2 ) {
-      if (speedX < 0) {
-        speedX = -speedX*1;
-        sonido.play();
-      }
-    }
-    else if (x + w/2 > paddleXR - paddleW/2 && y - h/2 < paddleYR + paddleH/2 && y + h/2 > paddleYR - paddleH/2 ) {
-      if (speedX > 0) {
-        speedX = -speedX*1;
-        sonido.play();
-      }
+  void mainAlgorithm(int x1, int y1, int x11, int y11, int diametro){
+  
+    int ax1 = x1;
+    int ay1 = y1;
+    int az1 = 0;
+    int ax11 = x11;
+    int ay11 = y11;
+    int az11=0;
+   
+    double x2 ;
+    double y2;
+    double z2;
+    
+   for(int i=0;i<1201;i=i+diametro){
+   
+      int angulo=i;
+      int z1=0;
+    
+      obj.vertex (ax1 , ay1 , az1 ) ;
+  
+      x2 = x1*Math.cos(angulo)-z1*Math.sin(angulo);
+      y2 = y1;
+      z2 = x1*Math.sin(angulo)+z1*Math.cos(angulo);
+    
+      obj.vertex ((int)x2 , (int)y2 , (int)z2 );
+      ax1=(int)x2;
+      ay1=(int)y2;
+      az1=(int)z2;
+    
+      obj.vertex (ax11 , ay11 , az11 ) ;
+    
+      x2 = x11*Math.cos(angulo)-z1*Math.sin(angulo);
+      y2 = y11;
+      z2 = x11*Math.sin(angulo)+z1*Math.cos(angulo);
+    
+      obj.vertex ((int)x2 , (int)y2 , (int)z2 );
+      ax11=(int)x2;
+      ay11=(int)y2;
+      az11=(int)z2;
     }
   }
   ```
-  
-  
- * Este método detecta cuando la pelota golpea en el limite de la ventana reiniciandola y sumando un punto por el lado en el que la golpea.
-    Las últimas dos condiciones lo que permite es que la pelota rebote en la parte superior e inferior de la ventana añadiendo así también un sonido.
 
-    ```
-    void bounceOff() {
-     if ( x > width - w/2) {
-        setup();
-        speedX = -speedX;
-        scoreL = scoreL + 1;
-      } else if ( x < 0 + w/2) {
-        setup();
-        scoreR = scoreR + 1;
-      }
-      if ( y > height - h/2) {
-        speedY = -speedY;
-        sonido.play();
-      } else if ( y < 0 + h/2) {
-        speedY = -speedY;
-        sonido.play();
-      }
-    }
-   ```
-* Este método en cuanto el scoreR o el scoreL llega a 10 finaliza el juego mostrando el color que ganó el juego.
-
-    ```
-    void gameOver() {
-      if(scoreL == winScore) {
-        gameOverPage("Red wins!", colorL);
-      }
-      if(scoreR == winScore) {
-        gameOverPage("Green wins!", colorR);
-      }
-    }
-   ```
-
- <p align="center"><img src="images/gameover.png" alt="gamePlay" width="300" height="300"></br>Pantalla final</p>
+ <p align="center"><img src="images/image.png" alt="gamePlay" width="300" height="300"></br>Pantalla final</p>
  
 
 
@@ -160,4 +150,4 @@ Para ayudarme en la realización de esta aplicación usé básicamente la API qu
 Añado un GIF con el resultado de la aplicación moviendose ambas paletas y rebotando la pelota en ellas.
 
   * Resultado
-  <p align="center"><img src="images/pong.gif" alt="gamePlay" width="300" height="300"></br>Gif resultado final</p>
+  <p align="center"><img src="images/gif.gif" alt="gamePlay" width="300" height="300"></br>Gif resultado final</p>
