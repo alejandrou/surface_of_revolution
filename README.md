@@ -31,20 +31,57 @@ El trabajo se basa en hacer una superficie de revolucion  en el programa Process
 
 Las mayores decisiones tomadas y las que mas pruebas requirieron fue ajustar el algoritmo de superficie para que se generara la rotación y al final generara la figura.
 
-* Este método detecta cuando las paletas llegan al limite de la ventana
+* El principal método que rota la figura dibujada con el ratón.
   ```
-    void restrictPaddle() {
-    if (paddleYL - paddleH/2 < 0) {
-      paddleYL = paddleYL + paddleS;
-    }
-    if (paddleYL + paddleH/2 > height) {
-      paddleYL = paddleYL - paddleS;
-    }
-    if (paddleYR - paddleH/2 < 0) {
-      paddleYR = paddleYR + paddleS;
-    }
-    if (paddleYR + paddleH/2 > height) {
-      paddleYR = paddleYR - paddleS;
+    void create_revolution_of_surface(){
+  if(drawing){
+      stroke(255);
+      line(400, 0, 400, 800);
+      stroke (255, 225, 0);    
+      if(mousePressed){
+        if (mouseX<400){
+          drawing=false;
+          y0=mouseY;
+          points.add(new Coordinates(0, y0));
+        }else if (firstPress == 1) {
+          firstPress = 0;
+          x0=mouseX;
+          y0=mouseY;
+          point(x0, y0);
+          points.add(new Coordinates(x0-400, y0));
+        }
+        else {   
+          x=mouseX;
+          y=mouseY;
+          point(x, y);
+          line(x0, y0, x, y);
+          x0=x;
+          y0=y;
+          points.add(new Coordinates(x0-400, y0));
+        }
+      }
+    } else if(!figureCreate){
+      
+        figureCreate=true;
+        
+        obj=createShape();
+        obj.beginShape(TRIANGLE_STRIP);
+        obj.fill(100);
+        obj.stroke (255,225,0) ;
+        
+        Coordinates b, a=points.get(0);
+        
+        for(int i=1; i<points.size();i++){
+          b=points.get(i);
+          mainAlgorithm(a.x, a.y, b.x, b.y, 100);
+          a = b;
+        }  
+        obj.endShape();
+      
+    } else {
+      background(0);
+      translate (mouseX, mouseY-100);
+      shape(obj);
     }
   }
 
