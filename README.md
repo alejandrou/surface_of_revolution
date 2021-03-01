@@ -139,8 +139,10 @@ Las mayores decisiones tomadas y las que mas pruebas requirieron fue ajustar el 
 Para ayudarme en la realización de esta aplicación usé básicamente la API que te proporciona [Processing](https://www.processing.org/).
 
 Además de entender la definición de superficie de revolución para poder realizar bien en algoritmo y que genere bien la figura.
-[Wikipedia](https://es.wikipedia.org/wiki/S%C3%B3lido_de_revoluci%C3%B3n).
-[Documentación de clase](https://ncvt-aep.ulpgc.es/cv/ulpgctp21/pluginfile.php/412240/mod_resource/content/40/CIU_Pr_cticas.pdf).
+
+* [Wikipedia](https://es.wikipedia.org/wiki/S%C3%B3lido_de_revoluci%C3%B3n).
+
+* [Documentación de clase](https://ncvt-aep.ulpgc.es/cv/ulpgctp21/pluginfile.php/412240/mod_resource/content/40/CIU_Pr_cticas.pdf).
 
 * [Processing](https://www.processing.org/)
 
