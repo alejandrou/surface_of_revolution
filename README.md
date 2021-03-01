@@ -31,7 +31,7 @@ El trabajo se basa en hacer una superficie de revolucion  en el programa Process
 
 Las mayores decisiones tomadas y las que mas pruebas requirieron fue ajustar el algoritmo de superficie para que se generara la rotación y al final generara la figura.
 
-* Método que crea la figura dibujada con el ratón.
+* Método que permite con el ratón dibujar añadiendo los puntos creados a la clase Coordenadas pudiendo luego crear la figura usando el método "mainAlgorhtm".
   ```
   void create_revolution_of_surface(){
     if(drawing){
@@ -84,7 +84,7 @@ Las mayores decisiones tomadas y las que mas pruebas requirieron fue ajustar el 
       shape(obj);
     }
   }
-* Método principal del algoritmo de superficie de revolución que va rotando la figura para finalmente crearla.
+* Método principal del algoritmo de superficie de revolución.
 
   ```
   void mainAlgorithm(int x1, int y1, int x11, int y11, int diametro){
