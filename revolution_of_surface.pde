@@ -15,6 +15,7 @@ void setup (){
   figureCreate=false;
   firstPress = 1;
   points = new ArrayList();
+  background(0);
   
   textSize(30);
   textAlign(CENTER, CENTER); 
@@ -144,7 +145,7 @@ void figureDrawnPage(String text, color c) {
   text(text, width/2, height/3);
   if(keyPressed) {
      if (key == ENTER){
-        background(200);
+        background(0);
         drawing=true;
         figureCreate=false;
         firstPress = 1;
