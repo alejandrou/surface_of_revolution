@@ -151,7 +151,7 @@ Además de entender la definición de superficie de revolución para poder reali
 
 ## Resultado
 
-Añado un GIF con el resultado de la aplicación moviendose ambas paletas y rebotando la pelota en ellas.
+Añado un GIF con el resultado de la aplicación final con la imagen creada.
 
   * Resultado
   <p align="center"><img src="images/figure.gif" alt="Figura" width="300" height="300"></br>Gif resultado final</p>
